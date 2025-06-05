@@ -1,14 +1,85 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ArrowUpRight, Search, Zap } from "lucide-react"
+import { ArrowUpRight, Search, Zap, AlertTriangle, Loader2 } from "lucide-react"
 import Link from "next/link"
+import { getTrendingTokens } from "@/lib/services/explorer"
+
+// Định nghĩa kiểu dữ liệu cho token
+type Token = {
+  name: string;
+  price: string;
+  change: string;
+  positive: boolean;
+  volume: string;
+  isRealData?: boolean;
+}
 
 export default function TrendingPage() {
   const [searchQuery, setSearchQuery] = useState("")
+  const [timeframe, setTimeframe] = useState<"1h" | "24h" | "7d">("24h")
+  const [trendingTokens, setTrendingTokens] = useState<Token[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  
+  // Lấy dữ liệu token trending theo khung thời gian
+  useEffect(() => {
+    async function fetchTrendingTokens() {
+      setLoading(true)
+      setError(null)
+      
+      try {
+        const tokens = await getTrendingTokens(timeframe)
+        
+        if (tokens && tokens.length > 0) {
+          // Chuyển đổi dữ liệu từ API sang định dạng UI
+          const formattedTokens: Token[] = tokens.map(token => ({
+            name: token.name || token.symbol || "Unknown",
+            price: `$${parseFloat(token.price).toFixed(token.price < 0.01 ? 8 : 2)}`,
+            change: `${token.priceChange >= 0 ? '+' : ''}${token.priceChange.toFixed(1)}%`,
+            positive: token.priceChange >= 0,
+            volume: `$${(token.volume / 1000000).toFixed(1)}M`,
+            isRealData: token.isRealData || false
+          }))
+          
+          setTrendingTokens(formattedTokens)
+        } else {
+          // Nếu API trả về mảng rỗng hoặc null, sử dụng dữ liệu mẫu
+          setTrendingTokens([
+            { name: "SOL", price: "$142.58", change: "+5.2%", positive: true, volume: "$24.5M" },
+            { name: "BONK", price: "$0.00002341", change: "+12.8%", positive: true, volume: "$8.2M" },
+            { name: "JTO", price: "$3.87", change: "-2.1%", positive: false, volume: "$5.7M" },
+            { name: "PYTH", price: "$0.58", change: "+8.4%", positive: true, volume: "$3.9M" },
+            { name: "RNDR", price: "$7.21", change: "-0.5%", positive: false, volume: "$2.8M" },
+          ])
+          setError("Không thể lấy dữ liệu token trending thật. Hiển thị dữ liệu mẫu.")
+        }
+      } catch (err: any) {
+        console.error("Lỗi khi lấy dữ liệu token trending:", err)
+        // Fallback to sample data
+        setTrendingTokens([
+          { name: "SOL", price: "$142.58", change: "+5.2%", positive: true, volume: "$24.5M" },
+          { name: "BONK", price: "$0.00002341", change: "+12.8%", positive: true, volume: "$8.2M" },
+          { name: "JTO", price: "$3.87", change: "-2.1%", positive: false, volume: "$5.7M" },
+          { name: "PYTH", price: "$0.58", change: "+8.4%", positive: true, volume: "$3.9M" },
+          { name: "RNDR", price: "$7.21", change: "-0.5%", positive: false, volume: "$2.8M" },
+        ])
+        setError(`Lỗi khi lấy dữ liệu token trending: ${err.message || 'Không xác định'}`)
+      } finally {
+        setLoading(false)
+      }
+    }
+    
+    fetchTrendingTokens()
+  }, [timeframe])
+  
+  // Lọc tokens theo từ khóa tìm kiếm
+  const filteredTokens = trendingTokens.filter(token => 
+    token.name.toLowerCase().includes(searchQuery.toLowerCase())
+  )
 
   return (
     <div>
@@ -28,7 +99,11 @@ export default function TrendingPage() {
           />
         </div>
 
-        <Tabs defaultValue="1h" className="w-full md:w-auto">
+        <Tabs 
+          defaultValue="24h" 
+          className="w-full md:w-auto"
+          onValueChange={(value) => setTimeframe(value as "1h" | "24h" | "7d")}
+        >
           <TabsList>
             <TabsTrigger value="1h">1H</TabsTrigger>
             <TabsTrigger value="24h">24H</TabsTrigger>
@@ -37,60 +112,53 @@ export default function TrendingPage() {
         </Tabs>
       </div>
 
+      {/* Hiển thị thông báo loading/lỗi */}
+      {loading && (
+        <div className="flex items-center justify-center py-10">
+          <Loader2 className="h-6 w-6 animate-spin mr-2 text-primary" />
+          <p>Đang tải dữ liệu token trending...</p>
+        </div>
+      )}
+      
+      {error && !loading && (
+        <div className="flex items-center mb-4 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-md">
+          <AlertTriangle className="h-4 w-4 text-yellow-500 mr-2" />
+          <p className="text-sm">{error}</p>
+        </div>
+      )}
+      
+      {/* Grid hiển thị token trending */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <Card className="trending-card">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">S</div>
-            <div>
-              <p className="font-medium">SOL</p>
-              <div className="flex items-center gap-2">
-                <p className="text-xs text-green-500">+5.2%</p>
-                <p className="text-xs text-muted-foreground">$142.58</p>
+        {filteredTokens.slice(0, 3).map((token, index) => (
+          <Card key={index} className="trending-card">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                {token.name.charAt(0)}
+              </div>
+              <div>
+                <p className="font-medium">{token.name}</p>
+                <div className="flex items-center gap-2">
+                  <p className={`text-xs ${token.positive ? "text-green-500" : "text-red-500"}`}>
+                    {token.change}
+                  </p>
+                  <p className="text-xs text-muted-foreground">{token.price}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="text-right">
-            <p className="font-medium">$24.5M</p>
-            <p className="text-xs text-muted-foreground">Volume (1h)</p>
-          </div>
-        </Card>
-
-        <Card className="trending-card">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">B</div>
-            <div>
-              <p className="font-medium">BONK</p>
-              <div className="flex items-center gap-2">
-                <p className="text-xs text-green-500">+42.3%</p>
-                <p className="text-xs text-muted-foreground">$0.00002341</p>
-              </div>
+            <div className="text-right">
+              <p className="font-medium">{token.volume}</p>
+              <p className="text-xs text-muted-foreground">Volume ({timeframe})</p>
             </div>
-          </div>
-          <div className="text-right">
-            <p className="font-medium">$8.2M</p>
-            <p className="text-xs text-muted-foreground">Volume (1h)</p>
-          </div>
-        </Card>
-
-        <Card className="trending-card">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-tertiary/20 flex items-center justify-center">J</div>
-            <div>
-              <p className="font-medium">JTO</p>
-              <div className="flex items-center gap-2">
-                <p className="text-xs text-red-500">-2.1%</p>
-                <p className="text-xs text-muted-foreground">$3.87</p>
-              </div>
-            </div>
-          </div>
-          <div className="text-right">
-            <p className="font-medium">$5.7M</p>
-            <p className="text-xs text-muted-foreground">Volume (1h)</p>
-          </div>
-        </Card>
+          </Card>
+        ))}
       </div>
 
-      <Tabs defaultValue="1h" className="w-full">
+      <Tabs 
+        defaultValue="24h" 
+        className="w-full"
+        value={timeframe}
+        onValueChange={(value) => setTimeframe(value as "1h" | "24h" | "7d")}
+      >
         <TabsList className="mb-6">
           <TabsTrigger value="1h">1H</TabsTrigger>
           <TabsTrigger value="24h">24H</TabsTrigger>
