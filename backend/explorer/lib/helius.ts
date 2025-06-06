@@ -3,27 +3,51 @@ import type { Block } from "@/types/block"
 import type { TokenBalance } from "@/types/token"
 import { tokenList } from "@/lib/token-list"
 
-// Replace with your own API key in .env.local
-const HELIUS_API_KEY = process.env.HELIUS_API_KEY || "YOUR_API_KEY"
+// API key từ .env.local hoặc sử dụng API key cụ thể
+const HELIUS_API_KEY = process.env.HELIUS_API_KEY || "3a4ab1c9-d59e-47d4-93d4-8e40600532e0"
 const HELIUS_RPC_URL = `https://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}`
+console.log("Sử dụng Helius API Key:", HELIUS_API_KEY.substring(0, 5) + "..." + HELIUS_API_KEY.substring(HELIUS_API_KEY.length - 4)) // Debug
+
+// Xác minh API key có hiệu lực bằng cách kiểm tra định dạng
+const isValidApiKey = HELIUS_API_KEY && HELIUS_API_KEY.length >= 30
+if (!isValidApiKey) {
+  console.warn("⚠️ HELIUS_API_KEY không hợp lệ hoặc không đủ độ dài! Sẽ sử dụng dữ liệu mẫu.")
+}
 
 // Cache for API calls
 const apiCache = new Map()
-const CACHE_DURATION = 60 * 1000 // 1 minute
+const CACHE_DURATION = 30 * 1000 // 30 seconds (giảm thời gian cache để dữ liệu cập nhật nhanh hơn)
+
+// Kiểm tra xem URL có tham số no-cache không
+function shouldBypassCache(): boolean {
+  if (typeof window === "undefined") return false
+  return window.location.href.includes("nocache=true")
+}
 
 // Cached fetch function to reduce API calls
 async function cachedFetch(url: string, options: RequestInit, cacheKey: string, cacheDuration = CACHE_DURATION) {
   const now = Date.now()
   const cachedItem = apiCache.get(cacheKey)
+  const bypassCache = shouldBypassCache()
 
-  // Return from cache if valid
-  if (cachedItem && now - cachedItem.timestamp < cacheDuration) {
+  // Debug log cho việc sử dụng cache
+  if (bypassCache) {
+    console.log(`🚫 Bỏ qua cache cho ${cacheKey} (nocache=true trong URL)`)
+  } else if (cachedItem && now - cachedItem.timestamp < cacheDuration) {
+    console.log(`📦 Sử dụng dữ liệu từ cache cho ${cacheKey} (còn ${Math.round((cacheDuration - (now - cachedItem.timestamp))/1000)}s)`)
     return cachedItem.data
+  } else {
+    console.log(`🔄 Fetching dữ liệu mới cho ${cacheKey}`)
   }
 
   try {
-    // Fetch from API if not in cache or expired
+    // Fetch from API if not in cache or expired or bypass cache
     const response = await fetch(url, options)
+    
+    if (!response.ok) {
+      throw new Error(`API response error: ${response.status} ${response.statusText}`)
+    }
+    
     const data = await response.json()
 
     // Save to cache
@@ -32,13 +56,15 @@ async function cachedFetch(url: string, options: RequestInit, cacheKey: string, 
       timestamp: now,
     })
 
+    console.log(`✅ Đã nhận dữ liệu mới cho ${cacheKey}`)
     return data
   } catch (error) {
     // Use stale cache if available on error
     if (cachedItem) {
-      console.warn(`Error fetching data, using stale cache for ${cacheKey}:`, error)
+      console.warn(`⚠️ Lỗi khi fetch data, sử dụng cache cũ cho ${cacheKey}:`, error)
       return cachedItem.data
     }
+    console.error(`❌ Lỗi khi fetch data cho ${cacheKey} và không có cache:`, error)
     throw error
   }
 }
@@ -240,7 +266,17 @@ export async function fetchAccountInfo(address: string): Promise<any> {
       2 * 60 * 1000, // 2 minutes cache
     )
 
-    return data.result
+    // Check if we received real data
+    const hasRealData = data && data.result && data.result.value && 
+                      (data.result.value.lamports > 0 || data.result.value.owner)
+
+    if (hasRealData) {
+      console.log("✅ Nhận được dữ liệu thật về account từ blockchain")
+      return data.result
+    } else {
+      console.warn("⚠️ Lỗi cấu trúc dữ liệu account từ API. Sử dụng giá trị mẫu.")
+      return { value: { lamports: 0, owner: "" } } // Fallback values
+    }
   } catch (error) {
     console.error("Error fetching account info:", error)
     return null
@@ -288,7 +324,7 @@ export async function fetchTokenBalances(address: string): Promise<TokenBalance[
       .filter(Boolean)
 
     // Process tokens with local token list first
-    const tokensWithInfo = tokenBalances.map((token) => {
+    const tokensWithInfo = tokenBalances.map((token: TokenBalance) => {
       // Check local token list first
       if (tokenList[token.mint]) {
         return {
@@ -338,12 +374,13 @@ export async function fetchNFTs(address: string): Promise<any[]> {
 export async function fetchSupplyInfo(): Promise<{
   total: number
   circulating: number
+  isRealData: boolean
 }> {
   try {
-    // Check if API key is available
-    if (!HELIUS_API_KEY) {
-      console.warn("Helius API key is not set. Using fallback supply values.")
-      return { total: 555000000, circulating: 410000000 } // Fallback values
+    // Check if API key is available and valid
+    if (!isValidApiKey) {
+      console.warn("⚠️ Helius API key không hợp lệ. Sử dụng giá trị mẫu.")
+      return { total: 555000000, circulating: 410000000, isRealData: false } // Fallback values
     }
 
     const cacheKey = "supply-info"
@@ -359,31 +396,32 @@ export async function fetchSupplyInfo(): Promise<{
           jsonrpc: "2.0",
           id: "my-id",
           method: "getSupply",
-          params: [],
+          params: [{ commitment: "processed" }],
         }),
       },
       cacheKey,
       10 * 60 * 1000, // 10 minutes cache
     )
 
-    if (data.error) {
-      console.error("API returned error:", data.error)
-      throw new Error(`API error: ${data.error.message || JSON.stringify(data.error)}`)
-    }
+    // Check if we received real data
+    const hasRealData = data && data.result && data.result.value && 
+                      (data.result.value.total > 0 || data.result.value.circulating > 0)
 
-    if (!data.result?.value) {
-      console.error("Invalid response format:", data)
-      throw new Error("Invalid response format")
-    }
-
-    return {
-      total: data.result.value.total / 10 ** 9 || 0,
-      circulating: data.result.value.circulating / 10 ** 9 || 0,
+    if (hasRealData) {
+      console.log("✅ Nhận được dữ liệu thật về supply từ blockchain")
+      return {
+        total: data.result.value.total / 1000000000 || 0, // Convert lamports to SOL
+        circulating: data.result.value.circulating / 1000000000 || 0,
+        isRealData: true
+      }
+    } else {
+      console.warn("⚠️ Lỗi cấu trúc dữ liệu supply từ API. Sử dụng giá trị mẫu.")
+      return { total: 555000000, circulating: 410000000, isRealData: false } // Fallback values
     }
   } catch (error) {
     console.error("Error fetching supply info:", error)
     // Return fallback values on error
-    return { total: 555000000, circulating: 410000000 }
+    return { total: 555000000, circulating: 410000000, isRealData: false }
   }
 }
 
@@ -391,12 +429,13 @@ export async function fetchEpochInfo(): Promise<{
   epoch: number
   slotIndex: number
   slotsInEpoch: number
+  isRealData: boolean
 }> {
   try {
-    // Check if API key is available
-    if (!HELIUS_API_KEY) {
-      console.warn("Helius API key is not set. Using fallback epoch values.")
-      return { epoch: 420, slotIndex: 432000, slotsInEpoch: 864000 }
+    // Check if API key is available and valid
+    if (!isValidApiKey) {
+      console.warn("⚠️ Helius API key không hợp lệ. Sử dụng giá trị mẫu cho epoch.")
+      return { epoch: 420, slotIndex: 432000, slotsInEpoch: 864000, isRealData: false } // Fallback values
     }
 
     const cacheKey = "epoch-info"
@@ -424,15 +463,25 @@ export async function fetchEpochInfo(): Promise<{
       throw new Error(`API error: ${data.error.message || JSON.stringify(data.error)}`)
     }
 
-    return {
-      epoch: data.result?.epoch || 0,
-      slotIndex: data.result?.slotIndex || 0,
-      slotsInEpoch: data.result?.slotsInEpoch || 0,
+    // Check if we received real data
+    const hasRealData = data && data.result && 
+                      (data.result.epoch > 0 || data.result.slotIndex > 0 || data.result.slotsInEpoch > 0)
+
+    if (hasRealData) {
+      console.log("✅ Nhận được dữ liệu thật về epoch từ blockchain")
+      return {
+        epoch: data.result.epoch || 0,
+        slotIndex: data.result.slotIndex || 0,
+        slotsInEpoch: data.result.slotsInEpoch || 0,
+        isRealData: true
+      }
+    } else {
+      console.warn("⚠️ Lỗi cấu trúc dữ liệu epoch từ API. Sử dụng giá trị mẫu.")
+      return { epoch: 420, slotIndex: 432000, slotsInEpoch: 864000, isRealData: false } // Fallback values
     }
   } catch (error) {
-    console.error("Error fetching epoch info:", error)
-    // Return fallback values on error
-    return { epoch: 420, slotIndex: 432000, slotsInEpoch: 864000 }
+    console.error("❌ Lỗi khi lấy thông tin epoch:", error)
+    return { epoch: 420, slotIndex: 432000, slotsInEpoch: 864000, isRealData: false } // Fallback values
   }
 }
 

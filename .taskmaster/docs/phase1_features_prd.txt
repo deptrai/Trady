@@ -1,0 +1,68 @@
+# Project: Trady Giai đoạn 1 - Hoàn thiện các tính năng còn thiếu
+
+## Tổng quan
+Chain Lens (Trady) đang trong Giai đoạn 1 (Core Launch - V1) và cần hoàn thiện một số tính năng cốt lõi trước khi chuyển sang Giai đoạn 2. Dựa trên phân tích hiện trạng, ba tính năng sau đây cần được hoàn thiện: CopySwap Engine, Trending Token Radar và Token-specific Live Chat.
+
+## 1. CopySwap Engine
+
+### Mô tả
+CopySwap Engine là tính năng cốt lõi cho phép người dùng theo dõi và sao chép giao dịch từ các ví hoạt động hiệu quả trong thời gian thực. UI cơ bản đã được phát triển nhưng thiếu phần backend và logic cốt lõi.
+
+### Yêu cầu chức năng
+1. Hệ thống Event Watchers để lắng nghe các giao dịch trên Solana blockchain
+2. Lọc giao dịch swap liên quan đến các ví được theo dõi
+3. Thực hiện sao chép giao dịch với các tham số tùy chỉnh (tỷ lệ %, giới hạn số tiền)
+4. Thông báo trạng thái sao chép cho người dùng
+5. Giao diện quản lý các ví đang được sao chép
+6. Xử lý lỗi và phục hồi khi giao dịch thất bại
+
+### Đặc điểm kỹ thuật
+- Backend: NestJS, WebSockets, Redis Queue
+- Frontend: Hoàn thiện giao diện người dùng trong Next.js
+- Tích hợp với Solana RPC và Jupiter API
+- Xử lý đồng thời nhiều giao dịch sao chép
+
+## 2. Trending Token Radar
+
+### Mô tả
+Trending Token Radar là công cụ giúp người dùng theo dõi các token đang nổi trên Solana, dựa trên khối lượng giao dịch, tăng/giảm giá, và các chỉ số khác. UI cơ bản đã được phát triển nhưng cần hoàn thiện backend và thuật toán.
+
+### Yêu cầu chức năng
+1. Thu thập dữ liệu từ nhiều nguồn (on-chain và off-chain)
+2. Phân tích xu hướng dựa trên thuật toán điểm trending
+3. Hiển thị danh sách token xu hướng với biểu đồ và thống kê
+4. Tích hợp với tính năng swap để giao dịch trực tiếp từ radar
+5. Cập nhật dữ liệu định kỳ (5-15 phút)
+6. Bộ lọc theo khung thời gian (1h, 6h, 24h, 7d)
+
+### Đặc điểm kỹ thuật
+- Data Aggregation System sử dụng Node-cron
+- Thuật toán phân tích xu hướng với các trọng số khác nhau
+- RESTful API cho frontend consumption
+- Caching để tối ưu hiệu suất
+
+## 3. Token-specific Live Chat
+
+### Mô tả
+Token-specific Live Chat cho phép người dùng tham gia vào các phòng chat theo từng token cụ thể, chia sẻ thông tin và phân tích. UI cơ bản đã được phát triển nhưng cần triển khai phần backend và real-time messaging.
+
+### Yêu cầu chức năng
+1. Chat thời gian thực giữa các người dùng trong cùng một phòng token
+2. Tự động tạo phòng chat cho các token mới thịnh hành
+3. Hiển thị thông tin người dùng và trạng thái online
+4. Lưu trữ lịch sử chat (1000 tin nhắn gần nhất)
+5. Tích hợp thông báo về hoạt động CopySwap và Trending trong chat
+6. Hệ thống kiểm duyệt cơ bản để ngăn chặn spam/nội dung xấu
+
+### Đặc điểm kỹ thuật
+- Supabase Realtime cho real-time messaging
+- RESTful API endpoints cho quản lý phòng chat
+- UI components cho tin nhắn và danh sách phòng
+- Tích hợp với hệ thống xác thực hiện có
+
+## Thời gian và ưu tiên
+1. CopySwap Engine: 4 tuần (Ưu tiên cao nhất)
+2. Trending Token Radar: 3 tuần (Ưu tiên trung bình)
+3. Token-specific Live Chat: 3 tuần (Ưu tiên thấp)
+
+Tổng cộng: 10 tuần để hoàn thiện tất cả các tính năng Giai đoạn 1.

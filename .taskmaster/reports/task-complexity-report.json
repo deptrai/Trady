@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "generatedAt": "2025-06-05T17:09:34.543Z",
+    "tasksAnalyzed": 15,
+    "totalTasks": 15,
+    "analysisCount": 15,
+    "thresholdScore": 5,
+    "projectName": "Taskmaster",
+    "usedResearch": true
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Set up project infrastructure",
+      "complexityScore": 7,
+      "recommendedSubtasks": 9,
+      "expansionPrompt": "Break down the project infrastructure setup into detailed steps for each technology and environment",
+      "reasoning": "High complexity due to multiple technologies and environments involved, requiring careful coordination and configuration"
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Implement Event Watchers for Solana blockchain",
+      "complexityScore": 8,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Detail the implementation steps for Solana blockchain event watching, including error handling and scalability considerations",
+      "reasoning": "High complexity due to real-time blockchain interaction, high transaction volumes, and need for robust error handling"
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Develop CopySwap Engine core logic",
+      "complexityScore": 9,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Elaborate on the core components of the CopySwap Engine, including transaction filtering, parameter calculation, and execution logic",
+      "reasoning": "Very high complexity due to intricate business logic, integration with external APIs, and need for high precision in financial calculations"
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Develop CopySwap Engine backend API",
+      "complexityScore": 6,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Detail the API endpoints, authentication mechanism, and data validation for the CopySwap Engine backend",
+      "reasoning": "Moderate complexity involving standard API development practices with additional security and performance considerations"
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Implement WebSocket server for real-time updates",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break down the WebSocket server implementation, including channel management, authentication, and message handling",
+      "reasoning": "High complexity due to real-time communication requirements, potential high message volumes, and need for robust error handling"
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Develop frontend components for CopySwap Engine",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Detail the UI components, state management, and real-time update integration for the CopySwap Engine frontend",
+      "reasoning": "High complexity due to the need for real-time updates, complex user interactions, and responsive design requirements"
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Implement Data Aggregation System for Trending Token Radar",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the data aggregation system, including data source integration, normalization, and caching mechanisms",
+      "reasoning": "High complexity due to multiple data sources, need for data normalization, and high-volume data processing requirements"
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Develop Trending Algorithm for Token Radar",
+      "complexityScore": 9,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the components of the trending algorithm, including scoring factors, time frame analyses, and dynamic weight adjustment",
+      "reasoning": "Very high complexity due to the need for sophisticated algorithmic design, multiple data points consideration, and dynamic adjustments"
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Create backend API for Trending Token Radar",
+      "complexityScore": 6,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Elaborate on the API endpoints, data filtering mechanisms, and performance optimizations for the Trending Token Radar",
+      "reasoning": "Moderate complexity involving standard API development with additional focus on data filtering and performance optimization"
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Develop frontend components for Trending Token Radar",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the UI components, data visualization, and user interaction features for the Trending Token Radar frontend",
+      "reasoning": "High complexity due to advanced UI components, data visualization requirements, and need for efficient rendering of large datasets"
+    },
+    {
+      "taskId": 11,
+      "taskTitle": "Implement Token-specific Live Chat backend",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the backend components for the live chat feature, including real-time messaging, chat room management, and moderation",
+      "reasoning": "High complexity due to real-time communication requirements, database design for chat functionality, and moderation features"
+    },
+    {
+      "taskId": 12,
+      "taskTitle": "Develop frontend components for Token-specific Live Chat",
+      "complexityScore": 6,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break down the UI components, real-time message handling, and user interaction features for the live chat frontend",
+      "reasoning": "Moderate complexity involving standard chat UI components with additional real-time update and responsive design considerations"
+    },
+    {
+      "taskId": 13,
+      "taskTitle": "Integrate CopySwap and Trending notifications into chat",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Detail the notification system design, integration points with other features, and message delivery mechanisms",
+      "reasoning": "High complexity due to the need for seamless integration with multiple system components and handling of high notification volumes"
+    },
+    {
+      "taskId": 14,
+      "taskTitle": "Implement comprehensive error handling and logging",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the error handling and logging system implementation for both backend and frontend, including integration with external services",
+      "reasoning": "High complexity due to the need for a comprehensive system spanning multiple application components and integration with external services"
+    },
+    {
+      "taskId": 15,
+      "taskTitle": "Perform security audit and implement security measures",
+      "complexityScore": 9,
+      "recommendedSubtasks": 10,
+      "expansionPrompt": "Detail the security audit process and implementation of security measures across all application components",
+      "reasoning": "Very high complexity due to the critical nature of security, need for comprehensive coverage across all system components, and ongoing maintenance requirements"
+    }
+  ]
+}
