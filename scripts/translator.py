@@ -36,7 +36,7 @@ def translate_text_to_vietnamese(text: str) -> str | None:
 
 if __name__ == '__main__':
     english_text_1 = "Hello, world! This is a test of the translation service."
-    english_text_2 = "Trady is a next-generation decentralized exchange (DEX) on Solana."
+    english_text_2 = "Chain Lens is a next-generation decentralized exchange (DEX) on Solana."
     
     print(f"Original: {english_text_1}")
     # In a real run orchestrated by Cascade, the following call would yield a real translation.

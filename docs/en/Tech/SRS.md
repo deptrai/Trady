@@ -4,14 +4,7 @@
 ### 1.1. Mục đích
 (Cần điền: Mô tả mục đích của tài liệu SRS này và đối tượng người đọc dự kiến.)
 ### 1.2. Phạm vi
-(Cần điền: Xác định phạm vi của nền tảng Chain Lens được đề cập trong SRS này.)
-### 1.3. Định nghĩa, Từ viết tắt và Chữ viết tắt (Definitions, Acronyms, and Abbreviations)
-(Cần điền: Liệt kê các thuật ngữ, từ viết tắt và chữ viết tắt chuyên ngành được sử dụng.)
-### 1.4. Tài liệu tham khảo (References)
-- Tài liệu chính thức của Chain Lens: [https://docs.chainlens.net/](https://docs.chainlens.net/)
-- (Thêm các tài liệu tham khảo khác khi được xác định)
-### 1.5. Tổng quan
-(Cần điền: Cung cấp một cái nhìn tổng quan ngắn gọn về phần còn lại của tài liệu SRS.)
+Chain Lens được thiết kế để trở thành một nền tảng giao dịch xã hội toàn diện trên blockchain Solana, cung cấp các tính năng như tạo và quản lý ví, giao dịch sao chép thời gian thực, hoán đổi token tổng hợp, chấm điểm và hiển thị danh tiếng ví, radar token thịnh hành và phòng chat trực tiếp theo token.
 
 ## 2. Mô tả Tổng thể (Overall Description)
 ### 2.1. Bối cảnh Sản phẩm (Product Perspective)

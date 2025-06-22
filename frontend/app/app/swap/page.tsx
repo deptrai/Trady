@@ -345,7 +345,7 @@ export default function SwapPage() {
                   <TrendingUp size={18} className="text-primary" />
                   Recent Swaps
                 </CardTitle>
-                <CardDescription>Latest transactions on Trady</CardDescription>
+                <CardDescription>Latest transactions on Chain Lens</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">

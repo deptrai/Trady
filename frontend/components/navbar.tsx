@@ -59,7 +59,7 @@ export function Navbar({ variant = "landing" }: { variant?: "landing" | "app" })
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold font-space-grotesk text-primary">Trady</span>
+            <span className="text-2xl font-bold font-space-grotesk text-primary">Chain Lens</span>
           </Link>
 
           {!isLanding && (
@@ -107,7 +107,7 @@ export function Navbar({ variant = "landing" }: { variant?: "landing" | "app" })
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b border-border/40">
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-                    <span className="text-2xl font-bold font-space-grotesk text-primary">Trady</span>
+                    <span className="text-2xl font-bold font-space-grotesk text-primary">Chain Lens</span>
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(false)}>
                     <X className="h-5 w-5" />

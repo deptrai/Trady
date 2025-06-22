@@ -25,7 +25,7 @@ export default function Header() {
               <Activity className="h-6 w-6 text-cyber-purple" />
               <div className="absolute inset-0 bg-cyber-purple/20 blur-sm rounded-full"></div>
             </div>
-            <span className="text-xl font-bold font-orbitron cyber-gradient-text">TRADY EXPLORER</span>
+            <span className="text-xl font-bold font-orbitron cyber-gradient-text">Chain Lens EXPLORER</span>
           </Link>
 
           {!isMobile && (

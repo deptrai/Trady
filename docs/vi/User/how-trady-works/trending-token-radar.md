@@ -1,6 +1,6 @@
-# Radar Token Xu Hướng
+# Chain Lens Trending Token Radar
 
-Chain Lens bao gồm một radar token thời gian thực tích hợp sẵn cho thấy những token nào đang thu hút khối lượng giao dịch và sự chú ý ngay bây giờ.
+Chain Lens Trending Token Radar là công cụ phân tích thời gian thực giúp người dùng phát hiện các token đang nổi lêng thu hút khối lượng giao dịch và sự chú ý ngay bây giờ.
 
 **Các Số Liệu Được Theo Dõi:**
 - Khối lượng swap (1 giờ / 6 giờ / 24 giờ)

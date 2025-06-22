@@ -72,7 +72,7 @@ export function LiveStatsBar() {
             <span>{trendingCount} trending tokens</span>
           </div>
         </div>
-        <div className="text-xs text-muted-foreground hidden md:block">Powered by Trady Protocol</div>
+        <div className="text-xs text-muted-foreground hidden md:block">Powered by Chain Lens Protocol</div>
       </div>
 
       {notification && (

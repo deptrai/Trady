@@ -17,26 +17,26 @@ except ImportError as e:
 # List of documents to process (based on the initial 20 from PRD)
 # Danh sách tài liệu cần xử lý (dựa trên 20 tài liệu ban đầu từ PRD)
 DOCUMENTS_TO_PROCESS = [
-    {"url": "https://docs.trady.so/introduction", "slug": "introduction"},
-    {"url": "https://docs.trady.so/getting-started", "slug": "getting-started"},
-    {"url": "https://docs.trady.so/how-trady-works", "slug": "how-trady-works"},
-    {"url": "https://docs.trady.so/key-features", "slug": "key-features"},
-    {"url": "https://docs.trady.so/user-guides", "slug": "user-guides"},
-    {"url": "https://docs.trady.so/user-guides/account-setup", "slug": "user-guides/account-setup"},
-    {"url": "https://docs.trady.so/user-guides/wallet-management", "slug": "user-guides/wallet-management"},
-    {"url": "https://docs.trady.so/user-guides/copy-trading", "slug": "user-guides/copy-trading"},
-    {"url": "https://docs.trady.so/user-guides/manual-trading", "slug": "user-guides/manual-trading"},
-    {"url": "https://docs.trady.so/user-guides/understanding-analytics", "slug": "user-guides/understanding-analytics"},
-    {"url": "https://docs.trady.so/developer-docs", "slug": "developer-docs"},
-    {"url": "https://docs.trady.so/developer-docs/api-reference", "slug": "developer-docs/api-reference"},
-    {"url": "https://docs.trady.so/developer-docs/sdk-integration", "slug": "developer-docs/sdk-integration"},
-    {"url": "https://docs.trady.so/support", "slug": "support"},
-    {"url": "https://docs.trady.so/support/faq", "slug": "support/faq"},
-    {"url": "https://docs.trady.so/support/troubleshooting", "slug": "support/troubleshooting"},
-    {"url": "https://docs.trady.so/legal", "slug": "legal"},
-    {"url": "https://docs.trady.so/legal/terms-of-service", "slug": "legal/terms-of-service"},
-    {"url": "https://docs.trady.so/legal/privacy-policy", "slug": "legal/privacy-policy"},
-    {"url": "https://docs.trady.so/contact-us", "slug": "contact-us"}
+    {"url": "https://docs.chainlens.net/introduction", "slug": "introduction"},
+    {"url": "https://docs.chainlens.net/getting-started", "slug": "getting-started"},
+    {"url": "https://docs.chainlens.net/how-Chain Lens-works", "slug": "how-Chain Lens-works"},
+    {"url": "https://docs.chainlens.net/key-features", "slug": "key-features"},
+    {"url": "https://docs.chainlens.net/user-guides", "slug": "user-guides"},
+    {"url": "https://docs.chainlens.net/user-guides/account-setup", "slug": "user-guides/account-setup"},
+    {"url": "https://docs.chainlens.net/user-guides/wallet-management", "slug": "user-guides/wallet-management"},
+    {"url": "https://docs.chainlens.net/user-guides/copy-trading", "slug": "user-guides/copy-trading"},
+    {"url": "https://docs.chainlens.net/user-guides/manual-trading", "slug": "user-guides/manual-trading"},
+    {"url": "https://docs.chainlens.net/user-guides/understanding-analytics", "slug": "user-guides/understanding-analytics"},
+    {"url": "https://docs.chainlens.net/developer-docs", "slug": "developer-docs"},
+    {"url": "https://docs.chainlens.net/developer-docs/api-reference", "slug": "developer-docs/api-reference"},
+    {"url": "https://docs.chainlens.net/developer-docs/sdk-integration", "slug": "developer-docs/sdk-integration"},
+    {"url": "https://docs.chainlens.net/support", "slug": "support"},
+    {"url": "https://docs.chainlens.net/support/faq", "slug": "support/faq"},
+    {"url": "https://docs.chainlens.net/support/troubleshooting", "slug": "support/troubleshooting"},
+    {"url": "https://docs.chainlens.net/legal", "slug": "legal"},
+    {"url": "https://docs.chainlens.net/legal/terms-of-service", "slug": "legal/terms-of-service"},
+    {"url": "https://docs.chainlens.net/legal/privacy-policy", "slug": "legal/privacy-policy"},
+    {"url": "https://docs.chainlens.net/contact-us", "slug": "contact-us"}
 ]
 
 def process_all_documents(project_root_path: str):

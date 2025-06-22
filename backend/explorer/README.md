@@ -1,4 +1,4 @@
-# Trady Explorer - Solana Blockchain Explorer
+# Chain Lens Explorer - Solana Blockchain Explorer
 
 A modern, cyberpunk-themed blockchain explorer for Solana.
 
@@ -22,8 +22,8 @@ A modern, cyberpunk-themed blockchain explorer for Solana.
 
 1. Clone the repository
 \`\`\`bash
-git clone https://github.com/madridyeth/Trady/backend/explorer/trady-explorer.git
-cd trady-explorer
+git clone https://github.com/madridyeth/Chain Lens/backend/explorer/Chain Lens-explorer.git
+cd Chain Lens-explorer
 \`\`\`
 
 2. Install dependencies

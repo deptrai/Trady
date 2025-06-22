@@ -46,7 +46,7 @@ export default function CreateWalletPage() {
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
     a.href = url
-    a.download = `trady-wallet-${getShortAddress()}.txt`
+    a.download = `Chain Lens-wallet-${getShortAddress()}.txt`
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)
@@ -81,14 +81,14 @@ export default function CreateWalletPage() {
         <Card className="border-primary/30 bg-card/90 backdrop-blur-xl">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl md:text-3xl">
-              {step === 1 && "Create Your Trady Wallet"}
+              {step === 1 && "Create Your Chain Lens Wallet"}
               {step === 2 && "Backup Your Wallet"}
               {step === 3 && "Wallet Ready!"}
             </CardTitle>
             <CardDescription>
               {step === 1 && "We'll generate a secure Solana wallet for you. No installs needed."}
               {step === 2 && "Store your private key safely. It's only shown once."}
-              {step === 3 && "Your wallet is now ready to use with Trady!"}
+              {step === 3 && "Your wallet is now ready to use with Chain Lens!"}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -165,7 +165,7 @@ export default function CreateWalletPage() {
                 </div>
 
                 <Button className="w-full btn-gradient animate-pulse" onClick={handleEnterApp}>
-                  Enter Trady App <ArrowRight className="h-4 w-4 ml-2" />
+                  Enter Chain Lens App <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
 
                 <p className="text-xs text-center text-muted-foreground">

@@ -128,10 +128,10 @@ if __name__ == '__main__':
 
     print(f"Detected Project Root: {project_root}")
 
-    # Example document: Process 'How Trady Works - Overview'
-    # Tài liệu ví dụ: Xử lý tài liệu 'How Trady Works - Overview'
-    sample_url = "https://docs.trady.so/how-trady-works/overview"
-    sample_slug = "how-trady-works-overview"
+    # Example document: Process 'How Chain Lens Works - Overview'
+    # Tài liệu ví dụ: Xử lý tài liệu 'How Chain Lens Works - Overview'
+    sample_url = "https://docs.chainlens.net/how-Chain Lens-works/overview"
+    sample_slug = "how-Chain Lens-works-overview"
 
     print(f"--- Running processing for: {sample_slug} ---")
     success = process_document(sample_url, sample_slug, project_root)

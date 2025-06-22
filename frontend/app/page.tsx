@@ -60,7 +60,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="section-title">Not Just Another Swap Platform</h2>
-            <p className="section-subtitle">We built Trady to feel like a product—not just a protocol.</p>
+            <p className="section-subtitle">We built Chain Lens to feel like a product—not just a protocol.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -102,7 +102,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="section-title">Live Market Pulse</h2>
-            <p className="section-subtitle">Real-time insights into what's happening on Trady right now.</p>
+            <p className="section-subtitle">Real-time insights into what's happening on Chain Lens right now.</p>
           </div>
 
           <div className="stats-grid">
@@ -143,7 +143,7 @@ export default function Home() {
             <div>
               <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Trade Smarter, Not Harder</h2>
               <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6">
-                Trady goes beyond basic DEX platforms by making swapping social, smart, and simple. It's built for both
+                Chain Lens goes beyond basic DEX platforms by making swapping social, smart, and simple. It's built for both
                 degens and first-timers who want an edge without doing all the work.
               </p>
               <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
@@ -168,7 +168,7 @@ export default function Home() {
               <div className="relative z-10 rounded-lg overflow-hidden border border-border/50 shadow-xl">
                 <Image
                   src="/dark-crypto-dashboard.png"
-                  alt="Trady App Interface"
+                  alt="Chain Lens App Interface"
                   width={800}
                   height={600}
                   className="w-full h-auto"
@@ -184,7 +184,7 @@ export default function Home() {
       <section className="py-16 md:py-20">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-3 md:mb-4">Ready to Trady?</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold mb-3 md:mb-4">Ready to Chain Lens?</h3>
             <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
               No sign-ups. No guesswork. Just connect & copy.
             </p>

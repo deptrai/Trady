@@ -1,7 +1,7 @@
-# Project: Trady Giai đoạn 1 - Hoàn thiện các tính năng còn thiếu
+# Project: Chain Lens Giai đoạn 1 - Hoàn thiện các tính năng còn thiếu
 
 ## Tổng quan
-Chain Lens (Trady) đang trong Giai đoạn 1 (Core Launch - V1) và cần hoàn thiện một số tính năng cốt lõi trước khi chuyển sang Giai đoạn 2. Dựa trên phân tích hiện trạng, ba tính năng sau đây cần được hoàn thiện: CopySwap Engine, Trending Token Radar và Token-specific Live Chat.
+Chain Lens (Chain Lens) đang trong Giai đoạn 1 (Core Launch - V1) và cần hoàn thiện một số tính năng cốt lõi trước khi chuyển sang Giai đoạn 2. Dựa trên phân tích hiện trạng, ba tính năng sau đây cần được hoàn thiện: CopySwap Engine, Trending Token Radar và Token-specific Live Chat.
 
 ## 1. CopySwap Engine
 

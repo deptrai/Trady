@@ -137,7 +137,7 @@ export function TerminalSearch() {
         <div className="w-3 h-3 rounded-full bg-cyber-pink mr-2"></div>
         <div className="w-3 h-3 rounded-full bg-cyber-teal mr-2"></div>
         <div className="w-3 h-3 rounded-full bg-cyber-purple mr-2"></div>
-        <span className="text-xs text-muted-foreground">search@trady-explorer:~</span>
+        <span className="text-xs text-muted-foreground">search@Chain Lens-explorer:~</span>
       </div>
 
       <div className="p-4 font-mono text-sm">

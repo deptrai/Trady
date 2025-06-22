@@ -36,15 +36,15 @@ def save_markdown_to_file(content: str, file_path: str) -> bool:
 if __name__ == '__main__':
     # Example usage / Ví dụ sử dụng
     sample_md_content_en = """
-# Introduction to Trady
+# Introduction to Chain Lens
 
-Trady is a revolutionary platform for decentralized trading.
+Chain Lens is a revolutionary platform for decentralized trading.
 This document provides an overview.
 """
     sample_md_content_vi = """
-# Giới thiệu về Trady
+# Giới thiệu về Chain Lens
 
-Trady là một nền tảng mang tính cách mạng cho giao dịch phi tập trung.
+Chain Lens là một nền tảng mang tính cách mạng cho giao dịch phi tập trung.
 Tài liệu này cung cấp một cái nhìn tổng quan.
 """
     
@@ -62,7 +62,7 @@ Tài liệu này cung cấp một cái nhìn tổng quan.
     # If scripts/file_writer.py, then ../docs/User/en is correct relative to project root.
     
     # Let's use paths relative to the project root for clarity in example
-    # Assuming project root is /Users/mac_1/Documents/GitHub/Untitled/Trady
+    # Assuming project root is /Users/mac_1/Documents/GitHub/Untitled/Chain Lens
     project_root = os.path.abspath(os.path.join(script_dir, '..')) 
     
     test_file_en_path = os.path.join(project_root, "docs", "User", "en", "example_en.md")

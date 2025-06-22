@@ -19,7 +19,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Trady - Social Swap & Copy Trading on Solana",
+  title: "Chain Lens - Social Swap & Copy Trading on Solana",
   description: "Trade Smarter. Copy Better. The social copy trading DEX for Solana.",
     generator: 'v0.dev'
 }

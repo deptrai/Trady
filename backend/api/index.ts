@@ -1,6 +1,6 @@
 /**
- * Trady Public API
- * Base URL: https://api.trady.so
+ * Chain Lens Public API
+ * Base URL: https://api.chainlens.net
  * Version: v1
  *
  * This API powers various public and partner integrations including:
@@ -67,7 +67,7 @@ app.get('/v1/token/:mint/chat-stats', (req, res) => {
 
 // Default route
 app.get('/', (req, res) => {
-  res.send('Welcome to Trady API. See /v1/ endpoints.');
+  res.send('Welcome to Chain Lens API. See /v1/ endpoints.');
 });
 
 export default app;

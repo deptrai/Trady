@@ -1,7 +1,7 @@
-# Project: Trady Documentation Processing and Translation
+# Project: Chain Lens Documentation Processing and Translation
 
 ## Overall Goal
-Download all documentation pages from the Trady website (https://docs.trady.so/).
+Download all documentation pages from the Chain Lens website (https://docs.chainlens.net/).
 Save the original English content of each page as a Markdown file in the 'docs/User/en/' directory relative to project root.
 Translate the content of each page into Vietnamese.
 Save the translated Vietnamese content of each page as a Markdown file in the 'docs/User/vi/' directory relative to project root.
@@ -9,103 +9,103 @@ Save the translated Vietnamese content of each page as a Markdown file in the 'd
 ## Document Processing Requirements
 
 ### Requirement 1: Process Document "Introduction"
--   **URL**: https://docs.trady.so/introduction
+-   **URL**: https://docs.chainlens.net/introduction
 -   **Slug**: introduction
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/introduction.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/introduction.md`.
 
 ### Requirement 2: Process Document "Getting Started"
--   **URL**: https://docs.trady.so/getting-started
+-   **URL**: https://docs.chainlens.net/getting-started
 -   **Slug**: getting-started
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/getting-started.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/getting-started.md`.
 
-### Requirement 3: Process Document "How Trady Works - Overview"
--   **URL**: https://docs.trady.so/how-trady-works/overview
--   **Slug**: how-trady-works-overview
--   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/how-trady-works-overview.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/how-trady-works-overview.md`.
+### Requirement 3: Process Document "How Chain Lens Works - Overview"
+-   **URL**: https://docs.chainlens.net/how-Chain Lens-works/overview
+-   **Slug**: how-Chain Lens-works-overview
+-   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/how-Chain Lens-works-overview.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/how-Chain Lens-works-overview.md`.
 
-### Requirement 4: Process Document "How Trady Works - Architecture Breakdown"
--   **URL**: https://docs.trady.so/how-trady-works/architecture-breakdown
--   **Slug**: how-trady-works-architecture-breakdown
--   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/how-trady-works-architecture-breakdown.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/how-trady-works-architecture-breakdown.md`.
+### Requirement 4: Process Document "How Chain Lens Works - Architecture Breakdown"
+-   **URL**: https://docs.chainlens.net/how-Chain Lens-works/architecture-breakdown
+-   **Slug**: how-Chain Lens-works-architecture-breakdown
+-   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/how-Chain Lens-works-architecture-breakdown.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/how-Chain Lens-works-architecture-breakdown.md`.
 
 ### Requirement 5: Process Document "Core Features - Wallet"
--   **URL**: https://docs.trady.so/core-features/wallet
+-   **URL**: https://docs.chainlens.net/core-features/wallet
 -   **Slug**: core-features-wallet
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/core-features-wallet.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/core-features-wallet.md`.
 
 ### Requirement 6: Process Document "Core Features - Swap"
--   **URL**: https://docs.trady.so/core-features/swap
+-   **URL**: https://docs.chainlens.net/core-features/swap
 -   **Slug**: core-features-swap
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/core-features-swap.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/core-features-swap.md`.
 
 ### Requirement 7: Process Document "Core Features - Copy Trading"
--   **URL**: https://docs.trady.so/core-features/copy-trading
+-   **URL**: https://docs.chainlens.net/core-features/copy-trading
 -   **Slug**: core-features-copy-trading
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/core-features-copy-trading.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/core-features-copy-trading.md`.
 
 ### Requirement 8: Process Document "Core Features - Reputation System"
--   **URL**: https://docs.trady.so/core-features/reputation-system
+-   **URL**: https://docs.chainlens.net/core-features/reputation-system
 -   **Slug**: core-features-reputation-system
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/core-features-reputation-system.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/core-features-reputation-system.md`.
 
 ### Requirement 9: Process Document "Core Features - Chat"
--   **URL**: https://docs.trady.so/core-features/chat
+-   **URL**: https://docs.chainlens.net/core-features/chat
 -   **Slug**: core-features-chat
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/core-features-chat.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/core-features-chat.md`.
 
 ### Requirement 10: Process Document "Security - Best Practices"
--   **URL**: https://docs.trady.so/security/best-practices
+-   **URL**: https://docs.chainlens.net/security/best-practices
 -   **Slug**: security-best-practices
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/security-best-practices.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/security-best-practices.md`.
 
 ### Requirement 11: Process Document "Security - Audits"
--   **URL**: https://docs.trady.so/security/audits
+-   **URL**: https://docs.chainlens.net/security/audits
 -   **Slug**: security-audits
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/security-audits.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/security-audits.md`.
 
 ### Requirement 12: Process Document "Developers - API Integration"
--   **URL**: https://docs.trady.so/developers/api-integration
+-   **URL**: https://docs.chainlens.net/developers/api-integration
 -   **Slug**: developers-api-integration
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/developers-api-integration.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/developers-api-integration.md`.
 
 ### Requirement 13: Process Document "Developers - SDKs"
--   **URL**: https://docs.trady.so/developers/sdks
+-   **URL**: https://docs.chainlens.net/developers/sdks
 -   **Slug**: developers-sdks
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/developers-sdks.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/developers-sdks.md`.
 
 ### Requirement 14: Process Document "Support - FAQ"
--   **URL**: https://docs.trady.so/support/faq
+-   **URL**: https://docs.chainlens.net/support/faq
 -   **Slug**: support-faq
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/support-faq.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/support-faq.md`.
 
 ### Requirement 15: Process Document "Support - Troubleshooting"
--   **URL**: https://docs.trady.so/support/troubleshooting
+-   **URL**: https://docs.chainlens.net/support/troubleshooting
 -   **Slug**: support-troubleshooting
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/support-troubleshooting.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/support-troubleshooting.md`.
 
 ### Requirement 16: Process Document "Support - Contact Us"
--   **URL**: https://docs.trady.so/support/contact-us
+-   **URL**: https://docs.chainlens.net/support/contact-us
 -   **Slug**: support-contact-us
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/support-contact-us.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/support-contact-us.md`.
 
 ### Requirement 17: Process Document "Legal - Terms of Service"
--   **URL**: https://docs.trady.so/legal/terms-of-service
+-   **URL**: https://docs.chainlens.net/legal/terms-of-service
 -   **Slug**: legal-terms-of-service
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/legal-terms-of-service.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/legal-terms-of-service.md`.
 
 ### Requirement 18: Process Document "Legal - Privacy Policy"
--   **URL**: https://docs.trady.so/legal/privacy-policy
+-   **URL**: https://docs.chainlens.net/legal/privacy-policy
 -   **Slug**: legal-privacy-policy
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/legal-privacy-policy.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/legal-privacy-policy.md`.
 
 ### Requirement 19: Process Document "About - Our Mission"
--   **URL**: https://docs.trady.so/about/our-mission
+-   **URL**: https://docs.chainlens.net/about/our-mission
 -   **Slug**: about-our-mission
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/about-our-mission.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/about-our-mission.md`.
 
 ### Requirement 20: Process Document "About - Team"
--   **URL**: https://docs.trady.so/about/team
+-   **URL**: https://docs.chainlens.net/about/team
 -   **Slug**: about-team
 -   **Action**: Download content from URL. Convert to Markdown. Save English version to `docs/User/en/about-team.md`. Translate to Vietnamese. Save Vietnamese version to `docs/User/vi/about-team.md`.
 
-**(Note: This list contains 20 sample documents. The full PRD will be populated with all ~71 documents identified from docs.trady.so for complete processing.)**
+**(Note: This list contains 20 sample documents. The full PRD will be populated with all ~71 documents identified from docs.chainlens.net for complete processing.)**

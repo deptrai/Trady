@@ -126,7 +126,7 @@ export default function CopyPage() {
     <div>
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Auto-Mirror Smart Wallets</h1>
-        <p className="text-muted-foreground">Pick a wallet. Let Trady handle the swaps.</p>
+        <p className="text-muted-foreground">Pick a wallet. Let Chain Lens handle the swaps.</p>
       </div>
 
       {/* Chỉ báo trạng thái dữ liệu */}
@@ -267,7 +267,7 @@ export default function CopyPage() {
       <Card>
         <CardHeader>
           <CardTitle>How Copy Trading Works</CardTitle>
-          <CardDescription>Trady automatically mirrors trades from wallets you follow</CardDescription>
+          <CardDescription>Chain Lens automatically mirrors trades from wallets you follow</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -289,7 +289,7 @@ export default function CopyPage() {
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-3">3</div>
               <h3 className="font-bold mb-2">Auto-Execute</h3>
               <p className="text-sm text-muted-foreground">
-                Trady automatically executes trades when your followed wallets make moves.
+                Chain Lens automatically executes trades when your followed wallets make moves.
               </p>
             </div>
           </div>

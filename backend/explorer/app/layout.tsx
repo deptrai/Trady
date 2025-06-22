@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron" })
 
 export const metadata: Metadata = {
-  title: "Trady - Solana Blockchain Explorer",
-  description: "Explore the Solana blockchain with Trady Explorer",
+  title: "Chain Lens - Solana Blockchain Explorer",
+  description: "Explore the Solana blockchain with Chain Lens Explorer",
     generator: 'v0.dev'
 }
 

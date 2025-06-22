@@ -25,8 +25,8 @@ def fetch_document_content(url: str) -> str | None:
 
 if __name__ == '__main__':
     # Example usage / Ví dụ sử dụng
-    test_url_valid = "https://docs.trady.so/introduction"
-    test_url_invalid = "https://docs.trady.so/non-existent-page"
+    test_url_valid = "https://docs.chainlens.net/introduction"
+    test_url_invalid = "https://docs.chainlens.net/non-existent-page"
     
     print(f"Fetching content from: {test_url_valid}")
     content_valid = fetch_document_content(test_url_valid)

@@ -7,9 +7,9 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-col items-center md:items-start">
             <Link href="/" className="flex items-center gap-2 mb-2">
-              <span className="text-2xl font-bold font-space-grotesk text-primary">Trady</span>
+              <span className="text-2xl font-bold font-space-grotesk text-primary">Chain Lens</span>
             </Link>
-            <p className="text-sm text-muted-foreground">© Trady 2025. Built on Solana.</p>
+            <p className="text-sm text-muted-foreground">© Chain Lens 2025. Built on Solana.</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-6 md:mt-0">
@@ -69,16 +69,16 @@ export function Footer() {
 
         <div className="flex justify-center md:justify-end mt-8 gap-4">
           <Link
-            href="https://twitter.com/tradyxyz"
+            href="https://twitter.com/Chain Lensxyz"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
             Twitter
           </Link>
-          <Link href="https://discord.gg/trady" className="text-muted-foreground hover:text-primary transition-colors">
+          <Link href="https://discord.gg/Chain Lens" className="text-muted-foreground hover:text-primary transition-colors">
             Discord
           </Link>
           <Link
-            href="https://github.com/tradyxyz"
+            href="https://github.com/Chain Lensxyz"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
             GitHub

@@ -88,8 +88,8 @@ export function AppHeader() {
   }
 
   return (
-    <header className="app-header">
-      <div className="app-header-content">
+    <header className="Chain Lens">
+      <div className="Chain Lens-content">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-bold font-space-grotesk text-primary">Chain Lens</span>

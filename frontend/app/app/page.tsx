@@ -44,7 +44,7 @@ export default function AppHome() {
   return (
     <motion.div variants={container} initial="hidden" animate="show">
       <motion.div variants={item} className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Welcome to Trady</h1>
+        <h1 className="text-3xl font-bold mb-2">Welcome to Chain Lens</h1>
         <p className="text-muted-foreground">Copy the trades of top wallets or explore hot tokens. Choose your edge.</p>
       </motion.div>
 

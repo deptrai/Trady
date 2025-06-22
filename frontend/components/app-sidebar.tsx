@@ -25,7 +25,7 @@ export function AppSidebar() {
     <div className={`sidebar ${collapsed ? "collapsed" : ""}`}>
       <div className="p-4 border-b border-border/50 flex items-center justify-between">
         <Link href="/app" className="flex items-center gap-2">
-          {!collapsed && <span className="text-xl font-bold font-space-grotesk text-primary">Trady</span>}
+          {!collapsed && <span className="text-xl font-bold font-space-grotesk text-primary">Chain Lens</span>}
           {collapsed && <span className="text-xl font-bold font-space-grotesk text-primary">T</span>}
         </Link>
         <button onClick={() => setCollapsed(!collapsed)} className="p-1 rounded-md hover:bg-muted/50 transition-all">

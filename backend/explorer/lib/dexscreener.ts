@@ -32,7 +32,7 @@ export async function fetchTokenInfoFromDexscreener(tokenAddress: string): Promi
     const response = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${tokenAddress}`, {
       headers: {
         Accept: "application/json",
-        "User-Agent": "Trady-Explorer/1.0",
+        "User-Agent": "Chain Lens-Explorer/1.0",
       },
       next: { revalidate: 3600 }, // 1 hour cache
     })

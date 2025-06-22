@@ -4,8 +4,8 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 import * as web3 from "@solana/web3.js"
 import bs58 from "bs58"
 
-const WALLET_STORAGE_KEY = "trady_wallet"
-const WALLET_LOCK_KEY = "trady_wallet_locked"
+const WALLET_STORAGE_KEY = "Chain Lens_wallet"
+const WALLET_LOCK_KEY = "Chain Lens_wallet_locked"
 const AUTO_LOCK_TIME = 15 * 60 * 1000 // 15 dakika
 
 type WalletContextType = {

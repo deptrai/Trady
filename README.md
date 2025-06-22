@@ -1,6 +1,6 @@
-# Trady – Social Trading DEX on Solana
+# Chain Lens – Social Trading DEX on Solana
 
-Trady is a Solana-native social trading platform that lets users:
+Chain Lens is a Solana-native social trading platform that lets users:
 
 - Instantly create a self-custodial wallet (no extensions required)
 - Copy top-performing wallets in real-time (CopySwap)
@@ -14,10 +14,10 @@ Trady is a Solana-native social trading platform that lets users:
 
 ## 🌐 Live Deployment
 
-- Website: [https://trady.so](https://trady.so)
-- App: [https://trady.so/app](https://trady.so/app)
-- Docs: [https://docs.trady.so](https://docs.trady.so)
-- Twitter: [https://x.com/TradyProtocol](https://x.com/TradyProtocol)
+- Website: [https://chainlens.net](https://chainlens.net)
+- App: [https://chainlens.net/app](https://chainlens.net/app)
+- Docs: [https://docs.chainlens.net](https://docs.chainlens.net)
+- Twitter: [https://x.com/ChainLensProtocol](https://x.com/ChainLensProtocol)
 
 ---
 
@@ -46,7 +46,7 @@ Trady is a Solana-native social trading platform that lets users:
 ## 🚀 Getting Started (Local Dev)
 
 ```bash
-cd trady/frontend
+cd Chain Lens/frontend
 
 npm install
 npm run dev

@@ -46,7 +46,7 @@ export default async function Home() {
         <div className="flex flex-col items-center justify-center py-16 md:py-24 text-center relative">
           <div className="absolute inset-0 bg-cyber-purple/5 blur-3xl rounded-full"></div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-orbitron tracking-wider">
-            <span className="text-cyber-purple">TRADY</span> <span className="text-cyber-teal">EXPLORER</span>
+            <span className="text-cyber-purple">Chain Lens</span> <span className="text-cyber-teal">EXPLORER</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mb-10 text-lg">
             Dive deep. Explore the Solana blockchain. Every transaction, every block, every token.
@@ -123,7 +123,7 @@ export default async function Home() {
               <div className="w-3 h-3 rounded-full bg-cyber-pink mr-2"></div>
               <div className="w-3 h-3 rounded-full bg-cyber-teal mr-2"></div>
               <div className="w-3 h-3 rounded-full bg-cyber-purple mr-2"></div>
-              <span className="text-xs text-muted-foreground">terminal@trady-explorer:~</span>
+              <span className="text-xs text-muted-foreground">terminal@Chain Lens-explorer:~</span>
             </div>
             <div className="p-6 font-mono text-sm cyber-code">
               <div className="text-muted-foreground">$ connect_to_solana_network</div>
