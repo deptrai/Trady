@@ -74,3 +74,5 @@ export function BackgroundGradient() {
 
   return <canvas ref={canvasRef} className="fixed inset-0 -z-10 opacity-70" />
 }
+
+export default BackgroundGradient

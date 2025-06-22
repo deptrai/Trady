@@ -1,5 +1,5 @@
 {
-  "name": "Chain Lens",
+  "name": "ChainLens",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -64,7 +64,9 @@
     "bs58": "latest",
     "@solana/spl-token-registry": "latest",
     "jsbi": "latest",
-    "crypto-js": "latest"
+    "crypto-js": "latest",
+    "swagger-ui-react": "latest",
+    "openapi-typescript-fetch": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
@@ -73,6 +75,7 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
     "typescript": "^5",
-    "@types/crypto-js": "latest"
+    "@types/crypto-js": "latest",
+    "@types/swagger-ui-react": "latest"
   }
 }

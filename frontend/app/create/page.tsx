@@ -4,12 +4,13 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { useWallet } from "@/contexts/wallet-context"
+import { useWallet, WalletProvider } from "@/contexts/wallet-context"
 import { useToast } from "@/components/ui/use-toast"
 import { motion } from "framer-motion"
 import { Copy, ArrowRight, Download, Key, AlertTriangle, CheckCircle } from "lucide-react"
 
-export default function CreateWalletPage() {
+// Tạo component con để sử dụng hook useWallet
+function CreateWalletContent() {
   const [step, setStep] = useState(1)
   const [privateKey, setPrivateKey] = useState("")
   const [confirmed, setConfirmed] = useState(false)
@@ -177,5 +178,14 @@ export default function CreateWalletPage() {
         </Card>
       </motion.div>
     </div>
+  )
+}
+
+// Component chính bọc trong WalletProvider
+export default function CreateWalletPage() {
+  return (
+    <WalletProvider>
+      <CreateWalletContent />
+    </WalletProvider>
   )
 }

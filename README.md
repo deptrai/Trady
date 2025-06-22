@@ -1,14 +1,95 @@
-# Chain Lens – Social Trading DEX on Solana
+# ChainLens - Modern Blockchain Explorer
 
-Chain Lens is a Solana-native social trading platform that lets users:
+ChainLens is a modern, user-friendly blockchain explorer for EVM-compatible networks. It provides comprehensive insights into blockchain data including blocks, transactions, addresses, tokens, and NFTs.
 
-- Instantly create a self-custodial wallet (no extensions required)
-- Copy top-performing wallets in real-time (CopySwap)
-- Swap tokens via Jupiter aggregator with optimal routing
-- Chat directly under any token
-- Discover trending tokens via Radar
+## Features
 
-💡 Think Telegram + Phantom + Jupiter, all in one UX.
+- **Full Block Explorer**: View detailed information about blocks, transactions, addresses, tokens, and smart contracts
+- **Complete NFT Support**: Browse and view NFTs (ERC-721 and ERC-1155) with metadata and collection information
+- **Token Explorer**: Detailed information about ERC-20 tokens including transfers, holders, and price data
+- **Advanced Search**: Powerful search functionality across all blockchain data
+- **Modern UI**: Clean, responsive interface built with Next.js and Tailwind CSS
+- **REST API**: Comprehensive API for developers to access blockchain data
+
+## Tech Stack
+
+- **Frontend**: Next.js 15.2, React 19, Tailwind CSS, Shadcn UI
+- **Backend**: Next.js API Routes, Node.js
+- **Blockchain Integration**: Web3.js, Ethers.js
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- PNPM package manager
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/chainlens.git
+cd chainlens
+```
+
+2. Install dependencies for both frontend and backend:
+
+```bash
+# Install frontend dependencies
+cd frontend
+pnpm install
+
+# Install backend dependencies
+cd ../backend/explorer
+pnpm install
+```
+
+3. Create environment files:
+
+```bash
+# Frontend .env
+cd frontend
+cp .env.example .env.local
+
+# Backend .env
+cd ../backend/explorer
+cp .env.example .env.local
+```
+
+4. Configure the environment variables in both `.env.local` files with your settings
+
+### Running the Application
+
+1. Start the backend server:
+
+```bash
+cd backend/explorer
+pnpm dev
+```
+
+2. In a new terminal, start the frontend:
+
+```bash
+cd frontend
+pnpm dev
+```
+
+3. Access the application:
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:3001
+
+## API Documentation
+
+The API documentation is available at http://localhost:3001/api-docs when the backend server is running.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
